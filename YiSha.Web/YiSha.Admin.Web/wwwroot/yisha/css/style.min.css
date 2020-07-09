@@ -3110,7 +3110,7 @@ body.body-small .navbar-top-links li:last-child {
 }
 
 .nav > li.active {
-    border-left: 4px solid #19aa8d;
+   /* border-left: 4px solid #19aa8d;*/
     background: #293846;
 }
 
@@ -9990,7 +9990,7 @@ body.rtls .top-navigation .footer.fixed, body.rtls.top-navigation .footer.fixed 
 .skin-blue .nav > li.active {
 	color: #fff;
 	background: #293846;
-	border-left: 3px solid #3c8dbc;
+	/*border-left: 3px solid #3c8dbc;*/
 }
 
 	.skin-blue .nav > li.active > ul li.active {
@@ -10167,7 +10167,7 @@ body.rtls .top-navigation .footer.fixed, body.rtls.top-navigation .footer.fixed 
 .skin-green .nav > li.active {
 	color: #fff;
 	background: #293846;
-	border-left: 3px solid #00a65a;
+	/*border-left: 3px solid #00a65a;*/
 }
 
 	.skin-green .nav > li.active > ul li.active {
@@ -10315,7 +10315,7 @@ body.rtls .top-navigation .footer.fixed, body.rtls.top-navigation .footer.fixed 
 
 .skin-red .nav > li.active {
 	color: #fff;
-	border-left: 3px solid #dd4b39;
+	/*border-left: 3px solid #dd4b39;*/
 	background: #293846;
 }
 
@@ -10469,7 +10469,7 @@ body.rtls .top-navigation .footer.fixed, body.rtls.top-navigation .footer.fixed 
 .skin-yellow .nav > li.active {
 	color: #fff;
 	background: #293846;
-	border-left: 3px solid #f39c12;
+	/*border-left: 3px solid #f39c12;*/
 }
 
 	.skin-yellow .nav > li.active > ul li.active {
@@ -10622,7 +10622,7 @@ body.rtls .top-navigation .footer.fixed, body.rtls.top-navigation .footer.fixed 
 .skin-purple .nav > li.active {
 	color: #fff;
 	background: #293846;
-	border-left: 3px solid #605ca8;
+	/*border-left: 3px solid #605ca8;*/
 }
 
 	.skin-purple .nav > li.active > ul li.active {

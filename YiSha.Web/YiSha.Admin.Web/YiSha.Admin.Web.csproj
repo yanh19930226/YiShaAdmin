@@ -33,4 +33,11 @@
     <ProjectReference Include="..\..\YiSha.Util\YiSha.Util\YiSha.Util.csproj" />
     <ProjectReference Include="..\YiSha.Web.Code\YiSha.Web.Code.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\StockManage\" />
+    <Folder Include="Areas\GoodsManage\" />
+    <Folder Include="Areas\WarehouseManage\" />
+    <Folder Include="Areas\BasicManage\" />
+  </ItemGroup>
 </Project>

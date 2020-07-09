@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="ToolManage\" />
+    <Folder Include="StockManage\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,127 @@
+﻿@{
+    Layout = "~/Views/Shared/_FormWhite.cshtml";
+}
+
+<div class="wrapper animated fadeInRight">
+    <form id="form" class="form-horizontal m">
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">Name<font class="red"> *</font></label>
+            <div class="col-sm-8">
+                <input id="name" col="Name" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">SpuId</label>
+            <div class="col-sm-8">
+                <input id="spuId" col="SpuId" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">StorageName</label>
+            <div class="col-sm-8">
+                <input id="storageName" col="StorageName" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">StorageId</label>
+            <div class="col-sm-8">
+                <input id="storageId" col="StorageId" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">WarehouseId</label>
+            <div class="col-sm-8">
+                <input id="warehouseId" col="WarehouseId" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">Unit</label>
+            <div class="col-sm-8">
+                <input id="unit" col="Unit" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">Weight</label>
+            <div class="col-sm-8">
+                <input id="weight" col="Weight" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">Remark</label>
+            <div class="col-sm-8">
+                <input id="remark" col="Remark" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">ImageUrl</label>
+            <div class="col-sm-8">
+                <input id="imageUrl" col="ImageUrl" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">PropertyName</label>
+            <div class="col-sm-8">
+                <input id="propertyName" col="PropertyName" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">OriginalSku</label>
+            <div class="col-sm-8">
+                <input id="originalSku" col="OriginalSku" type="text" class="form-control" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    var id = ys.request("id");
+    $(function () {
+        getForm();
+
+        $('#form').validate({
+            rules: {
+                name: { required: true }
+            }
+        });
+    });
+
+    function getForm() {
+        if (id > 0) {
+            ys.ajax({
+                url: '@Url.Content("~/GoodsManage/Sku/GetFormJson")' + '?id=' + id,
+                type: 'get',
+                success: function (obj) {
+                    if (obj.Tag == 1) {
+                        $('#form').setWebControls(obj.Data);
+                    }
+                }
+            });
+        }
+        else {
+            var defaultData = {};
+            $('#form').setWebControls(defaultData);
+        }
+    }
+
+    function saveForm(index) {
+        if ($('#form').validate().form()) {
+            var postData = $('#form').getWebControls({ Id: id });
+            ys.ajax({
+                url: '@Url.Content("~/GoodsManage/Sku/SaveFormJson")',
+                type: 'post',
+                data: postData,
+                success: function (obj) {
+                    if (obj.Tag == 1) {
+                        ys.msgSuccess(obj.Message);
+                        parent.searchGrid();
+                        parent.layer.close(index);
+                    }
+                    else {
+                        ys.msgError(obj.Message);
+                    }
+                }
+            });
+        }
+    }
+</script>
+
